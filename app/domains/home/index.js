@@ -1,12 +1,12 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import { Button } from 'react-native-elements'
+import StyledButton from 'app/components/button'
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Button style={styles.button} title="Sign in with Facebook" />
-      <Button style={styles.button} title="Sign in with Google" />
+      <StyledButton title="Sign in with Facebook" />
+      <StyledButton title="Sign in with Google" />
     </View>
   )
 }
