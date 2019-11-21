@@ -10,6 +10,7 @@ import Button from './Button'
 import CenterView from './CenterView'
 import Welcome from './Welcome'
 import StyledButton from '../../app/components/button'
+import Spinner from '../../app/components/spinner'
 
 storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
 
@@ -28,3 +29,6 @@ storiesOf('Button', module)
   .add('styled button', () => (
     <StyledButton title="Some title here" />
   ))
+
+storiesOf('Loading', module)
+  .add('spinner', () => <Spinner />)
