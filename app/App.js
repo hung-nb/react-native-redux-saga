@@ -8,11 +8,12 @@
 
 import React from 'react'
 import { Text } from 'react-native'
+import Routing from 'app/config/routing'
 
 const App = () => {
   return (
     <>
-      <Text>Hello World</Text>
+      <Routing />
     </>
   )
 }
