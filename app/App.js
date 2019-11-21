@@ -7,14 +7,16 @@
  */
 
 import React from 'react'
-import { Text } from 'react-native'
 import Routing from 'app/config/routing'
+import { Provider } from 'react-redux'
+import { createStore, applyMiddleware } from 'redux'
+import store from 'app/redux'
 
 const App = () => {
   return (
-    <>
+    <Provider store={store}>
       <Routing />
-    </>
+    </Provider>
   )
 }
 

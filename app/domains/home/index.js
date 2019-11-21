@@ -1,12 +1,29 @@
 import React from 'react'
 import { View, StyleSheet } from 'react-native'
-import StyledButton from 'app/components/button'
+import { connect } from 'react-redux'
+import { login } from 'app/redux/actions'
 
-const Home = () => {
+import StyledButton from 'app/components/button'
+import Spinner from 'app/components/spinner'
+
+const Home = (props) => {
+
+  const { loading, doLogin } = props
+
+  const signInFacebook = () => {
+    console.log('Sign In FB!')
+    doLogin()
+  }
+
+  const signInGoogle = () => {
+    console.log('Sign In GG!')
+  }
+
   return (
     <View style={styles.container}>
-      <StyledButton title="Sign in with Facebook" />
-      <StyledButton title="Sign in with Google" />
+      <StyledButton onPress={signInFacebook} title="Sign in with Facebook" />
+      <StyledButton onPress={signInGoogle} title="Sign in with Google" />
+      <Spinner loading={loading} />
     </View>
   )
 }
@@ -24,4 +41,21 @@ const styles = StyleSheet.create({
   }
 })
 
-export default Home
+const mapStateToProps = (state, ownProps) => {
+  return {
+    loading: state.auth.loading
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    doLogin: () => {
+      dispatch(login())
+    }
+  }
+}
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home)

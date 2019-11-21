@@ -1,10 +1,13 @@
 import React from 'react'
 import { View, ActivityIndicator, StyleSheet } from 'react-native'
 
-const Spinner = () => {
+const Spinner = (props) => {
+
+  const { loading } = props
+
   return (
     <View style={styles.container}>
-      <ActivityIndicator />
+      <ActivityIndicator animating={loading} />
     </View>
   )
 }

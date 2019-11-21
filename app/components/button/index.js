@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native'
 import { Button } from 'react-native-elements'
 
 const StyledButton = (props) => {
-  const { title } = props
+  const { title, onPress } = props
 
   return (
-    <Button style={styles.button} title={title} />
+    <Button onPress={onPress} style={styles.button} title={title} />
   )
 }
 
