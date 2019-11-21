@@ -1,10 +1,12 @@
 import React from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
+import { Button } from 'react-native-elements'
 
 const Home = () => {
   return (
     <View style={styles.container}>
-      <Text>Home</Text>
+      <Button style={styles.button} title="Sign in with Facebook" />
+      <Button style={styles.button} title="Sign in with Google" />
     </View>
   )
 }
@@ -12,9 +14,13 @@ const Home = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
+    marginTop: 30,
     alignItems: 'center',
-    backgroundColor: '#2c3e50'
+    backgroundColor: '#fff'
+  },
+  button: {
+    width: 200,
+    marginTop: 20
   }
 })
 
